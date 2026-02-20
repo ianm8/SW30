@@ -1,5 +1,5 @@
 /*
- * Classic SW30 Receiver Version 0.1.240
+ * Classic SW30 Receiver Version 1.2.240
  *
  * Copyright 2026 Ian Mitchell VK7IAN
  * Licenced under the GNU GPL Version 3
