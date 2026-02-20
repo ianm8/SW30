@@ -1,0 +1,5 @@
+## Revision 1.1
+ * U14 MC74VHC1GT125DBVT1G
+ * U3 BGA616H6327XTSA1
+ * Change R49 to 3k
+
