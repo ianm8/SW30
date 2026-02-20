@@ -1,5 +1,5 @@
 ## Libraries
- *  All libraries inluded except those that come with arduino-pico
+ *  All libraries included except those that come with arduino-pico
  
 ## Build
  *  Generic RP2350
