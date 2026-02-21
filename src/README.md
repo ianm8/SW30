@@ -2,6 +2,7 @@
  *  All libraries included except those that come with arduino-pico
  
 ## Build
+To build, I use Arduino IDE 2 with: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
  *  Generic RP2350
  *  CPU Speed: 240Mhz
  *  Optimize: -O3
