@@ -1,5 +1,5 @@
 /*
- * Classic SW30 Receiver Version 1.2.240
+ * Classic SW30 Receiver Version 1.4.240
  *
  * Copyright 2026 Ian Mitchell VK7IAN
  * Licenced under the GNU GPL Version 3
@@ -26,6 +26,8 @@
  *  1.0.240 feature complete
  *  1.1.240 modify si5351 library to remove glitches above 100MHz
  *  1.2.240 set band defaults to ham frequencies
+ *  1.3.240 add bandwidth setting to AM mode
+ *  1.4.240 update CW processing to FS/4
  *
  * https://github.com/deftio/companders/tree/master
  *
@@ -285,15 +287,15 @@ static void init_i2s(void)
 static void set_frequency(void)
 {
   static const int32_t ssboffset = SAMPLERATE/4;
-  static const int32_t cwoffset = CW_TONE;
+  static const int32_t cwoffset = ssboffset + CW_TONE;
   int32_t offset = 0;
   switch (radio.mode)
   {
     case MODE_LSB: offset = +ssboffset; break;
     case MODE_USB: offset = -ssboffset; break;
     case MODE_AM:  offset = +ssboffset; break;
-    case MODE_CWL: offset = +CW_TONE;   break;
-    case MODE_CWU: offset = -CW_TONE;   break;
+    case MODE_CWL: offset = +cwoffset;  break;
+    case MODE_CWU: offset = -cwoffset;  break;
   }
   const uint64_t f = SI5351_FREQ_MULT * ((radio.frequency+offset) * 4ull + 2ull);
 #ifndef DEBUGGING_SKIP
@@ -534,7 +536,7 @@ void __not_in_flash_func(loop)(void)
     case MODE_USB: dac_audio = DSP::process_ssb(qq,ii,jnr,bw); break;
     case MODE_CWL: dac_audio = DSP::process_cw(ii,qq);         break;
     case MODE_CWU: dac_audio = DSP::process_cw(qq,ii);         break;
-    case MODE_AM:  dac_audio = DSP::process_am(ii,qq,jnr);     break;
+    case MODE_AM:  dac_audio = DSP::process_am(ii,qq,jnr,bw);  break;
     case MODE_SWL: dac_audio = DSP::process_swl(jnr,bw);       break;
   }
   dac_audio = constrain(dac_audio,-2048l,+2047l);

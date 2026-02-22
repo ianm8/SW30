@@ -72,7 +72,6 @@ namespace DSP
       return (uint8_t)UTIL::map(log_peak,S9_from_min,S9_from_max,S9_min,S9_max);
     }
     static const float S0_sig = 100.0f;
-////
     static const float S9_sig = 200.0f;
     static const float S9p_sig = 8192.0f;
     static const uint32_t S9_from_min = (uint32_t)(log10f(S0_sig) * 1024.0f);
@@ -123,16 +122,16 @@ namespace DSP
 
   static const int16_t __not_in_flash_func(process_cw)(const int16_t in_i,const int16_t in_q)
   {
-    // remove DC
-    const float ii = FILTER::dc1f((float)in_i / 32768.0f);
-    const float qq = FILTER::dc2f((float)in_q / 32768.0f);
+    // 2 bit quadrature local oscillator
+    volatile static struct { uint32_t lo : 2; } quad = { 0 };
 
-    // phase shift IQ +/- 45
-    const float p45 = FILTER::fap1f(ii);
-    const float n45 = FILTER::fap2f(qq);
+    // remove DC and half of image
+    const float ii = FILTER::hpf_fs4f_i((float)in_i / 32768.0f);
+    const float qq = FILTER::hpf_fs4f_q((float)in_q / 32768.0f);
 
-    // reject image
-    const float ssb = p45 - n45;
+    // quadrature down-convert from FS/4
+    const float iq[] = { qq, ii, -qq, -ii };
+    const float ssb = iq[quad.lo++];
 
     // BPF for CW
     const float audio_out = FILTER::bpf_700f(ssb);
@@ -141,7 +140,7 @@ namespace DSP
     return agc(audio_out * 32768.0f);
   }
 
-  static const int16_t __not_in_flash_func(process_am)(const int16_t in_i,const int16_t in_q,const uint32_t jnr_level)
+  static const int16_t __not_in_flash_func(process_am)(const int16_t in_i,const int16_t in_q,const uint32_t jnr_level,const uint8_t bw)
   {
     // BPF I with +45 phase shift
     // BPF Q with -45 phase shift
@@ -182,7 +181,7 @@ namespace DSP
     gain = fminf(gain, max_gain);
 
     // extract audio from rectified AM signal
-    const float audio_raw = FILTER::dcf(sqrtf(fabsf(FILTER::lpf_3000f(rectified))));
+    const float audio_raw = FILTER::dcf(sqrtf(fabsf(FILTER::bwf[bw](rectified))));
     const float audio_out = FILTER::jnr(audio_raw,jnr_level);
     return (int16_t)(audio_out * 32768.0f * gain);
   }
