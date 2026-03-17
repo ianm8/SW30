@@ -1,0 +1,106 @@
+ID,Name,Designator,Footprint,Quantity,Manufacturer Part,Manufacturer,Supplier,Supplier Part,Notes
+1,100n,"C1,C2,C7,C16,C25,C29,C33,C41,C42,C43,C44,C46,C47,C57,C58,C60,C61,C62,C65,C66,C70,C72,C74,C75,C76",1206,25,,,,,C0G
+2,1n3,"C3,C6",1206,2,1,,,,C0G
+3,2n7,"C4,C5",1206,2,,,,,C0G
+4,1n8,"C8,C11,C13,C14",1206,4,,,,,C0G
+5,1n,"C9,C10,C12,C15",1206,4,,,,,C0G
+6,10n,"C17,C18,C37,C45,C51,C52,C53,C54,C55,C56",1206,10,,,,,C0G
+7,820p,"C19,C21,C23",1206,3,,,,,C0G
+8,470p,"C20,C31",1206,2,,,,,C0G
+9,510p,"C22,C24,C49,C50",1206,4,,,,,C0G
+10,270p,"C26,C28,C30,C32",1206,4,,,,,C0G
+11,180p,C27,1206,1,,,,,C0G
+12,150p,"C34,C36",1206,2,,,,,C0G
+13,100p,C35,1206,1,,,,,C0G
+14,120p,"C38,C40",1206,2,,,,,C0G
+15,220p,C39,1206,1,,,,,C0G
+16,100u,"C48,C63",1206,2,,,,,
+17,22u,"C59,C64,C67,C68,C69,C71,C73,C77",1206,8,,,,,
+18,1N4148W-7-F,"D1,D2,D3,D4",SOD-123_L2.8-W1.8-LS3.7-RD,4,1N4148W-7-F,DIODES,LCSC,C83528,
+19,SS14,"D5,D6",SMA_L4.4-W2.8-LS5.4-RD,2,SS14,MDD,Mouser,,
+20,ANTSW2,J1,1WIRE,1,,,,,Flying lead connection only
+21,ANT,"J2,J52",1WIRE,2,,,,,Flying lead connection only
+22,ANTSW1,J3,1WIRE,1,,,,,Flying lead connection only
+23,ANTSW3,J4,1WIRE,1,,,,,Flying lead connection only
+24,GND,"J5,J8,J11,J20,J31,J39,J43,J47,J49,J51",1WIRE,10,,,,,Flying lead connection only
+25,TUNEA,J6,1WIRE,1,,,,,Flying lead connection only
+26,TUNEB,J7,1WIRE,1,,,,,Flying lead connection only
+27,FINEA,J9,1WIRE,1,,,,,Flying lead connection only
+28,FINEB,J10,1WIRE,1,,,,,Flying lead connection only
+29,BAND1,J12,1WIRE,1,,,,,Flying lead connection only
+30,BAND2,J13,1WIRE,1,,,,,Flying lead connection only
+31,BAND3,J14,1WIRE,1,,,,,Flying lead connection only
+32,BAND4,J15,1WIRE,1,,,,,Flying lead connection only
+33,BAND5,J16,1WIRE,1,,,,,Flying lead connection only
+34,SP1,J17,1WIRE,1,,,,,Flying lead connection only
+35,BAND6,J18,1WIRE,1,,,,,Flying lead connection only
+36,SP2,J19,1WIRE,1,,,,,Flying lead connection only
+37,FILTER1,J21,1WIRE,1,,,,,Flying lead connection only
+38,PHL,J22,1WIRE,1,,,,,Flying lead connection only
+39,FILTER2,J23,1WIRE,1,,,,,Flying lead connection only
+40,PHSW,J24,1WIRE,1,,,,,Flying lead connection only
+41,FILTER3,J25,1WIRE,1,,,,,Flying lead connection only
+42,VOL1,J26,1WIRE,1,,,,,Flying lead connection only
+43,PHR,J27,1WIRE,1,,,,,Flying lead connection only
+44,FILTER4,J28,1WIRE,1,,,,,Flying lead connection only
+45,VOL2,J29,1WIRE,1,,,,,Flying lead connection only
+46,PHCOM,J30,1WIRE,1,,,,,Flying lead connection only
+47,VOL3,J32,1WIRE,1,,,,,Flying lead connection only
+48,MODE1,J33,1WIRE,1,,,,,Flying lead connection only
+49,MODE2,J34,1WIRE,1,,,,,Flying lead connection only
+50,MODE3,J35,1WIRE,1,,,,,Flying lead connection only
+51,MODE4,J36,1WIRE,1,,,,,Flying lead connection only
+52,MODE5,J37,1WIRE,1,,,,,Flying lead connection only
+53,MODE6,J38,1WIRE,1,,,,,Flying lead connection only
+54,JNR1,J40,1WIRE,1,,,,,Flying lead connection only
+55,JNR2,J41,1WIRE,1,,,,,Flying lead connection only
+56,JNR3,J42,1WIRE,1,,,,,Flying lead connection only
+57,ATT6,J44,1WIRE,1,,,,,Flying lead connection only
+58,ATT12,J45,1WIRE,1,,,,,Flying lead connection only
+59,IN12V,J46,1WIRE,1,,,,,Flying lead connection only
+60,Smeter,J48,1WIRE,1,,,,,Flying lead connection only
+61,TUNE,J50,1WIRE,1,,,,,Flying lead connection only
+62,JW2SN-DC12V,"K1,K2",RELAY-TH_JW2SN-DCXXV,2,JW2SN-DC12V,PANASONIC(??),LCSC,C141974,
+63,6u8,"L1,L2,L3",120608,3,AISM-1812-1R0K,,,AISM-1812-1R0K,
+64,3u3,"L4,L5,L6",120608,3,AISM-1812-1R0K,,,AISM-1812-1R0K,
+65,2u2,"L7,L8,L9",120608,3,AISM-1812-1R0K,,,AISM-1812-1R0K,
+66,1u2,"L10,L11,L12,L13",120608,4,AISM-1812-1R0K,,,AISM-1812-1R0K,
+67,10u,L14,120608,1,AISM-1812-1R0K,,,1206F-100K-01,
+68,680n,"L15,L16,L17,L18",120608,4,AISM-1812-1R0K,,,AISM-1812-1R0K,
+69,PFL4514-153MEC,L19,PFL4514-SM,1,PFL4514,Coilcraft,,PFL4514,
+70,330n,"L20,L21",120608,2,AISM-1812-1R0K,,,AISM-1812-1R0K,
+71,390n,"L22,L23",120608,2,AISM-1812-1R0K,,,AISM-1812-1R0K,
+72,39,"R1,R4,R7",1206,3,?,,,,1% Thick film
+73,150,"R2,R3,R5,R6,R8,R9",1206,6,?,,,,1% Thick film
+74,10k,"R10,R11,R19,R20",1206,4,?,,,,1% Thick film
+75,100,"R12,R17,R23,R24,R25,R26,R57,R60",1206,8,?,,,,1% Thick film
+76,82,"R13,R14",1206,2,?,,,,1% Thick film
+77,1k,"R15,R16,R21,R22,R27,R28,R31,R33,R35,R36,R37,R38,R39,R40,R41,R42,R43,R44,R45,R46,R47,R48,R50,R51,R52,R53,R54,R58,R59",1206,29,?,,,,1% Thick film
+78,10,R18,1206,1,?,,,,1% Thick film
+79,1k5,R29,1206,1,?,,,,1% Thick film
+80,100k,R30,1206,1,?,,,,1% Thick film
+81,10/500mW,"R32,R55",1206,2,?,,,352210RJT,1% Thick film
+82,470,R34,1206,1,?,,,,1% Thick film
+83,4k7,R49,1206,1,?,,,,1% Thick film
+84,3k,R56,1206,1,?,,,,1% Thick film
+85,78602/4JC-2,T1,78602SM,1,,,,,
+86,SN74CBT3253CDR,"U1,U2,U5",SOIC-16_L9.9-W3.9-P1.27-LS6.0-BL,3,SN74CBT3253PWR,Texas Instruments,Digi-Key,C424399,
+87,MMG3H21NT1,U3,SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR,1,MMG3H21NT1,NXP,,C2151398,
+88,"74ALVC74D,118",U4,SO-14_L8.9-W3.9-P1.27-LS6.0-BL,1,"74ALVC74D,118",Nexperia(??),LCSC,C554816,
+89,MS5351M,U6,MSOP-10_L3.0-W3.0-P0.50-LS5.0-BL,1,MS5351M,????,LCSC,C1509083,
+90,FOX914B-26,U7,FOX924B,1,FOX924B-25,Fox,Mouser,559-FOX924B-25,
+91,LM1117,U9,SOT-223,1,LM1117MP-5.0/NOPB,TI,LCSC,C131933,
+92,SC3258-RP2350B,U10,SC3258-RP2350B,1,SC3258,,Silicon Chip,SC3258,
+93,LM4875MX/NOPB,U11,SOIC-8,1,LM4875MX/NOPB,TI,LCSC,C134135,
+94,MC7805CD2TR4G,U12,TO-263-2_L10.0-W9.1-P5.08-LS15.2-TL,1,MC7805CD2TR4G,onsemi,Mouser,863-MC7805CD2TR4G,
+95,PCM1808PW,U13,TSSOP-14_L5.0-W4.4-P0.65-LS6.4-BL,1,PCM1808PW,TI(????),Mouser,,
+96,MC74VHC1GT125D1G,U14,SC-74A-5_L2.9-W1.6-P0.95-LS2.8-BL,1,MC74VHC1GT125D1G,onsemi(???),LCSC,C3755764,
+97,TL974ID,U8,SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL,1,TL974ID,TI(????),Mouser,C1347110,
+98,Rotary 6 way,,,2,Your choice,,,,
+99,Rotary 4 way,,,3,Your choice,,,,
+100,Power Connector,,,1,Your choice,,,,
+101,Power Switch,,,1,Your choice,,,,
+102,Frequency Meter,,,1,,5V,Adafruit,3990,
+103,S meter,,,1,Your choice,1ma,,,
+104,Knobs,,,,Your choice,,,,
+105,Case,,,,240 x 160 x 90,,Jarcar,HB6134,Spray painted black
