@@ -1,5 +1,5 @@
 /*
- * Classic SW30 Receiver Version 1.4.240
+ * Classic SW30 Receiver Version 1.7.240
  *
  * Copyright 2026 Ian Mitchell VK7IAN
  * Licenced under the GNU GPL Version 3
@@ -21,6 +21,8 @@
  *  Flash Size: 16MB (no FS)
  *  Chip Variant: "RP2350B"
  *
+ * Note: file size 14MB so takes up to 5 minutes to program!
+ *
  * Some history
  *  0.1.240 start with MBPTRX code
  *  1.0.240 feature complete
@@ -28,6 +30,9 @@
  *  1.2.240 set band defaults to ham frequencies
  *  1.3.240 add bandwidth setting to AM mode
  *  1.4.240 update CW processing to FS/4
+ *  1.5.240 clean mute on band change
+ *  1.6.240 s-meter fixes
+ *  1.7.240 noise reduction includes noise blanker
  *
  * https://github.com/deftio/companders/tree/master
  *
@@ -133,6 +138,7 @@ volatile static struct
   uint8_t filter;
   uint8_t jnr;
   radio_mode_t mode;
+  bool mute;
 }
 radio =
 {
@@ -142,7 +148,8 @@ radio =
   0,
   0,
   0,
-  MODE_LSB
+  MODE_LSB,
+  false
 };
 
 static const struct
@@ -539,7 +546,7 @@ void __not_in_flash_func(loop)(void)
     case MODE_AM:  dac_audio = DSP::process_am(ii,qq,jnr,bw);  break;
     case MODE_SWL: dac_audio = DSP::process_swl(jnr,bw);       break;
   }
-  dac_audio = constrain(dac_audio,-2048l,+2047l);
+  dac_audio = radio.mute?0:constrain(dac_audio,-2048l,+2047l);
   dac_audio += 2048l;
   dac_h = dac_audio >> 6;
   dac_l = dac_audio & 0x3f;
@@ -597,11 +604,12 @@ void loop1(void)
     radio.band = band_select;
     old_band_select = band_select;
     // mute during change
-    DSP::mute();
+    radio.mute = true;
     delay(250);
     set_filter();
     set_frequency();
     delay(250);
+    radio.mute = false;
   }
   if (old_filter_select != filter_select)
   {
