@@ -17,3 +17,6 @@ To build, I use Arduino IDE 2 with: https://github.com/earlephilhower/arduino-pi
  *  1.2.240 set band defaults to ham frequencies
  *  1.3.240 add bandwidth setting to AM mode
  *  1.4.240 update CW processing to FS/4
+ *  1.5.240 clean mute on band change
+ *  1.6.240 s-meter fixes
+ *  1.7.240 noise reduction includes noise blanker
